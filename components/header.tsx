@@ -68,7 +68,7 @@ export default function Header() {
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
           </li>
-          <li className={styles.navItem}>
+          {/* <li className={styles.navItem}>
             <Link href="/client">Client</Link>
           </li>
           <li className={styles.navItem}>
@@ -88,7 +88,7 @@ export default function Header() {
           </li>
           <li className={styles.navItem}>
             <Link href="/test">Next.js App Router Migration</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
