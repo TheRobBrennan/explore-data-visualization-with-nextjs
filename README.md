@@ -30,22 +30,19 @@
 
 ## Overview
 
-NextAuth.js is a complete open-source authentication solution.
+This project is based off previous work from my [repo](https://github.com/TheRobBrennan/nextjs-with-next-auth) exploring how to incorporate `next-auth` into a simple Next.js app using GitHub for user authentication.
 
-This is an example application that shows how `next-auth` is applied to a basic Next.js app.
+The deployed version of this project can be found at [https://explore-data-visualization-with-nextjs.vercel.app](https://explore-data-visualization-with-nextjs.vercel.app)
 
-The deployed version can be found at [`next-auth-example.vercel.app`](https://next-auth-example.vercel.app)
-
-Go to [next-auth.js.org](https://next-auth.js.org) for more information and documentation.
 
 ## Getting Started
 
 ### 1. Clone the repository and install dependencies
 
 ```
-git clone https://github.com/nextauthjs/next-auth-example.git
-cd next-auth-example
-npm install
+% git clone https://github.com/TheRobBrennan/explore-data-visualization-with-nextjs.git
+% cd explore-data-visualization-with-nextjs
+% npm install
 ```
 
 ### 2. Configure your local environment
@@ -99,7 +96,7 @@ npm run start
 
 Follow the [Deployment documentation](https://authjs.dev/guides/basics/deployment) or deploy the example instantly using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-auth-example)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/nextauthjs/next-auth-example&project-name=next-auth-example&repository-name=next-auth-example)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/TheRobBrennan/explore-data-visualization-with-nextjs&project-name=explore-data-visualization-with-nextjs&repository-name=explore-data-visualization-with-nextjs)
 
 ## Acknowledgements
 
