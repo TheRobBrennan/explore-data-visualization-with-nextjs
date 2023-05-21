@@ -12,7 +12,7 @@ export default function ExampleBarChart() {
           datasets: [
             {
               label: "# of vulnerabilities",
-              data: [15, 12, 6, 7, 4],
+              data: Array.from({ length: 5 }, () => Math.floor(Math.random() * 20)),
               backgroundColor: ["red", "yellow", "blue", "black", "green"],
               borderColor: "orange",
               borderWidth: 5
