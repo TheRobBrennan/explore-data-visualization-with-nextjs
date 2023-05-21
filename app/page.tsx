@@ -2,6 +2,7 @@
 import Header from '../components/Header/header'
 import ExampleBarChart from '../components/ExampleBarChart/ExampleBarChart'
 import ExampleScatterPlot from '../components/ExampleScatterPlot/ExampleScatterPlot'
+import ExampleRadarChart from '../components/ExampleRadarChart/ExampleRadarChart'
 
 const PAGE_TITLE = "Welcome to Next.js v13"
 
@@ -15,6 +16,7 @@ export default function DefaultPage() {
       </p>
       <ExampleBarChart />
       <ExampleScatterPlot />
+      <ExampleRadarChart />
     </>
   )
 }
