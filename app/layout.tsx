@@ -6,9 +6,10 @@ import { headers } from 'next/headers'
 import AuthContext from '../contexts/authentication/AuthContext'
 
 export const metadata: Metadata = {
-  title: '[DEMO] Next.js v13 with next-auth',
-  description: 'Welcome to Next.js v13 with next-auth',
+  title: '[DEMO] Explore Data Visualization with Next.js',
+  description: 'Explore Data Visualization with Next.js',
 }
+
 async function getSession(cookie: string): Promise<Session> {
   const response = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/session`, {
     headers: {

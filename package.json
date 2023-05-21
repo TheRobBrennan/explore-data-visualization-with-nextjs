@@ -1,11 +1,13 @@
 {
+  "name": "explore-data-visualization-with-nextjs",
+  "version": "0.0.0",
   "private": true,
   "description": "An example project for NextAuth.js with Next.js",
-  "repository": "https://github.com/TheRobBrennan/nextjs-with-next-auth",
+  "repository": "https://github.com/TheRobBrennan/explore-data-visualization-with-nextjs",
   "bugs": {
-    "url": "https://github.com/TheRobBrennan/nextjs-with-next-auth/issues"
+    "url": "https://github.com/TheRobBrennan/explore-data-visualization-with-nextjs/issues"
   },
-  "homepage": "https://nextjs-with-next-auth-rust.vercel.app",
+  "homepage": "https://explore-data-visualization-with-nextjs.vercel.app",
   "scripts": {
     "dev": "next",
     "build": "next build",
