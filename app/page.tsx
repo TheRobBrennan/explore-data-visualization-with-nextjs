@@ -1,7 +1,7 @@
 'use client'
-import Header from '../components/header'
-
+import Header from '../components/Header/header'
 import ExampleBarChart from '../components/ExampleBarChart/ExampleBarChart'
+import ExampleScatterPlot from '../components/ExampleScatterPlot/ExampleScatterPlot'
 
 const PAGE_TITLE = "Welcome to Next.js v13"
 
@@ -14,6 +14,7 @@ export default function DefaultPage() {
         Stay tuned for data visualization examples.
       </p>
       <ExampleBarChart />
+      <ExampleScatterPlot />
     </>
   )
 }
