@@ -34,8 +34,6 @@ This project is based off previous work from my [repo](https://github.com/TheRob
 
 The deployed version of this project can be found at [https://explore-data-visualization-with-nextjs.vercel.app](https://explore-data-visualization-with-nextjs.vercel.app)
 
-<iframe src="https://explore-data-visualization-with-nextjs.vercel.app" width="100%" height="100%"></iframe>
-
 ## Getting Started
 
 ### 1. Clone the repository and install dependencies
