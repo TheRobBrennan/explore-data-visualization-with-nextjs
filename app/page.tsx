@@ -1,9 +1,11 @@
 'use client'
 import Header from '../components/header'
 
+import ExampleBarChart from '../components/ExampleBarChart/ExampleBarChart'
+
 const PAGE_TITLE = "Welcome to Next.js v13"
 
-export default function TestMigrationPage() {
+export default function DefaultPage() {
   return (
     <>
       <Header />
@@ -11,6 +13,7 @@ export default function TestMigrationPage() {
       <p>
         Stay tuned for data visualization examples.
       </p>
+      <ExampleBarChart />
     </>
   )
 }
