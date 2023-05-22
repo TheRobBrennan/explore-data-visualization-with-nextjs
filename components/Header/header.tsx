@@ -68,6 +68,9 @@ export default function Header() {
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
           </li>
+          <li className={styles.navItem}>
+            <Link href="/test-scatterplot">Test Scatterplot in Pages directory</Link>
+          </li>
           {/* <li className={styles.navItem}>
             <Link href="/client">Client</Link>
           </li>
