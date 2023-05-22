@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { signIn, signOut, useSession } from "next-auth/react"
 import styles from "./header.module.css"
 import { getServerSession } from "next-auth"
 import SignInButton from "./SignInButton"
@@ -13,14 +12,8 @@ export default async function Header() {
 
   return (
     <header>
-      <noscript>
-        <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
-      </noscript>
       <div className={styles.signedInStatus}>
-        <p
-          className={`nojs-show ${!session ? styles.loading : styles.loaded
-            }`}
-        >
+        <p>
           {!session && (
             <>
               <span className={styles.notSignedInText}>
