@@ -7,7 +7,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Scatter } from 'react-chartjs-2';
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
@@ -31,10 +30,6 @@ export const data = {
     },
   ],
 };
-
-// export default function ExampleScatterPlot() {
-//   return <Scatter options={options} data={data} />;
-// }
 
 export default function ExampleScatterPlot() {
   useEffect(() => {
