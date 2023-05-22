@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Chart as ChartJS,
   LinearScale,
@@ -32,6 +32,36 @@ export const data = {
   ],
 };
 
+// export default function ExampleScatterPlot() {
+//   return <Scatter options={options} data={data} />;
+// }
+
 export default function ExampleScatterPlot() {
-  return <Scatter options={options} data={data} />;
+  useEffect(() => {
+    const chartInstance = new ChartJS('myExampleScatterPlot', {
+      type: 'scatter',
+      data: data,
+      options: options,
+      plugins: [{
+        id: 'customLines',
+        afterDraw: (chart) => {
+          const ctx = chart.ctx;
+          ctx.strokeStyle = 'rgba(0, 255, 0, 0.5)'; // Set line color to green
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          const yPosition = chart.chartArea.bottom - (chart.chartArea.height / 2);
+          ctx.moveTo(chart.chartArea.left, yPosition);
+          ctx.lineTo(chart.chartArea.right, yPosition);
+          ctx.stroke();
+        },
+      }],
+    });
+
+    return () => {
+      // Cleanup the chart instance if component is unmounted
+      chartInstance.destroy();
+    };
+  }, []);
+
+  return <canvas id="myExampleScatterPlot" />;
 }
