@@ -7,9 +7,10 @@ import {
   LineElement,
   Tooltip,
   Legend,
+  ScatterController,
 } from 'chart.js';
 
-ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
+ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend, ScatterController);
 
 export const options = {
   scales: {
