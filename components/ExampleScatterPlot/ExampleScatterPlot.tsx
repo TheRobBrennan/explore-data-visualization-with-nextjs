@@ -42,13 +42,20 @@ export default function ExampleScatterPlot() {
         afterDraw: (chart) => {
           const ctx = chart.ctx;
 
-          // Add a green line
+          // Draw a horizontal green line across the middle
           ctx.strokeStyle = 'rgba(0, 255, 0, 0.5)'; // Set line color to green
           ctx.lineWidth = 2;
           ctx.beginPath();
           const yPosition = chart.chartArea.bottom - (chart.chartArea.height / 2);
           ctx.moveTo(chart.chartArea.left, yPosition);
           ctx.lineTo(chart.chartArea.right, yPosition);
+          ctx.stroke();
+
+          // Draw vertical line top to bottom
+          const xPosition = chart.chartArea.left + (chart.chartArea.width / 2);
+          ctx.beginPath();
+          ctx.moveTo(xPosition, chart.chartArea.top);
+          ctx.lineTo(xPosition, chart.chartArea.bottom);
           ctx.stroke();
 
           // Add text just under and to the right of the green line
