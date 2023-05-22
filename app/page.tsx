@@ -8,7 +8,8 @@ const PAGE_TITLE = "Welcome to Next.js v13"
 export default function DefaultPage() {
   return (
     <>
-      {/* @ts-expect-error Async Server Component - https://nextjs.org/docs/app/building-your-application/configuring/typescript#async-server-component-typescript-error */}
+      {/* Expected error - Async Server Component - https://nextjs.org/docs/app/building-your-application/configuring/typescript#async-server-component-typescript-error */}
+      {/* @ts-ignore */}
       <Header />
       <h1>{PAGE_TITLE}</h1>
       <p>
