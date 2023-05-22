@@ -1,4 +1,3 @@
-> The example repository is maintained from a [monorepo](https://github.com/nextauthjs/next-auth/tree/main/apps/examples/nextjs). Pull Requests should be opened against [`nextauthjs/next-auth`](https://github.com/nextauthjs/next-auth).
 
 <p align="center">
    <br/>
@@ -33,6 +32,14 @@
 This project is based off previous work from my [repo](https://github.com/TheRobBrennan/nextjs-with-next-auth) exploring how to incorporate `next-auth` into a simple Next.js app using GitHub for user authentication.
 
 The deployed version of this project can be found at [https://explore-data-visualization-with-nextjs.vercel.app](https://explore-data-visualization-with-nextjs.vercel.app)
+
+When you spin up the app you'll see:
+![](./screenshots/01.png)
+
+If you click the *Sign In* button, you can log in and see your user profile in the header:
+![](./screenshots/02.png)
+![](./screenshots/03.png)
+![](./screenshots/04.png)
 
 ## Getting Started
 
