@@ -14,14 +14,6 @@ export default async function Header() {
     <header>
       <div className={styles.signedInStatus}>
         <p>
-          {!session && (
-            <>
-              <span className={styles.notSignedInText}>
-                You are not signed in
-              </span>
-              <SignInButton />
-            </>
-          )}
           {session?.user && (
             <>
               {session.user.image && (
@@ -35,7 +27,6 @@ export default async function Header() {
                 <br />
                 <strong>{session.user.email ?? session.user.name}</strong>
               </span>
-              <SignOutButton />
             </>
           )}
         </p>
@@ -44,6 +35,14 @@ export default async function Header() {
         <ul className={styles.navItems}>
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
+          </li>
+          <li className={styles.navItem}>
+            {!session && (
+              <SignInButton />
+            )}
+            {session?.user?.image && (
+              <SignOutButton />
+            )}
           </li>
         </ul>
       </nav>
