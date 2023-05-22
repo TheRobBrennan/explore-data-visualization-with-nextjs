@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import {
   Chart as ChartJS,
   LinearScale,
@@ -7,6 +6,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { Scatter } from 'react-chartjs-2';
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
@@ -32,52 +32,54 @@ export const data = {
 };
 
 export default function ExampleScatterPlot() {
-  useEffect(() => {
-    const chartInstance = new ChartJS('myExampleScatterPlot', {
-      type: 'scatter',
-      data: data,
-      options: options,
-      plugins: [{
-        id: 'customLines',
-        afterDraw: (chart) => {
-          const ctx = chart.ctx;
+  return <Scatter options={options} data={data} />;
 
-          // Start in the middle of our chart
-          const xPosition = chart.chartArea.left + (chart.chartArea.width / 2);
-          const yPosition = chart.chartArea.bottom - (chart.chartArea.height / 2);
+  // useEffect(() => {
+  //   const chartInstance = new ChartJS('myExampleScatterPlot', {
+  //     type: 'scatter',
+  //     data: data,
+  //     options: options,
+  //     plugins: [{
+  //       id: 'customLines',
+  //       afterDraw: (chart) => {
+  //         const ctx = chart.ctx;
 
-          // Draw a horizontal green line across the middle
-          ctx.strokeStyle = 'rgba(0, 255, 0, 0.5)'; // Set line color to green
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          ctx.moveTo(chart.chartArea.left, yPosition);
-          ctx.lineTo(chart.chartArea.right, yPosition);
-          ctx.stroke();
+  //         // Start in the middle of our chart
+  //         const xPosition = chart.chartArea.left + (chart.chartArea.width / 2);
+  //         const yPosition = chart.chartArea.bottom - (chart.chartArea.height / 2);
 
-          // Draw vertical line top to bottom
-          ctx.beginPath();
-          ctx.moveTo(xPosition, chart.chartArea.top);
-          ctx.lineTo(xPosition, chart.chartArea.bottom);
-          ctx.stroke();
+  //         // Draw a horizontal green line across the middle
+  //         ctx.strokeStyle = 'rgba(0, 255, 0, 0.5)'; // Set line color to green
+  //         ctx.lineWidth = 2;
+  //         ctx.beginPath();
+  //         ctx.moveTo(chart.chartArea.left, yPosition);
+  //         ctx.lineTo(chart.chartArea.right, yPosition);
+  //         ctx.stroke();
 
-          // Add text just under and to the right of the green line
-          const text = 'Baseline';
-          const textWidth = ctx.measureText(text).width;
-          const textX = chart.chartArea.right - textWidth - 5; // Position the text to the right of the chart
-          const textY = yPosition + 5;
-          ctx.fillStyle = 'black'; // Set text color to black
-          ctx.font = '12px Arial';
-          ctx.fillText(text, textX, textY); // Add text near the line
+  //         // Draw vertical line top to bottom
+  //         ctx.beginPath();
+  //         ctx.moveTo(xPosition, chart.chartArea.top);
+  //         ctx.lineTo(xPosition, chart.chartArea.bottom);
+  //         ctx.stroke();
 
-        },
-      }],
-    });
+  //         // Add text just under and to the right of the green line
+  //         const text = 'Baseline';
+  //         const textWidth = ctx.measureText(text).width;
+  //         const textX = chart.chartArea.right - textWidth - 5; // Position the text to the right of the chart
+  //         const textY = yPosition + 5;
+  //         ctx.fillStyle = 'black'; // Set text color to black
+  //         ctx.font = '12px Arial';
+  //         ctx.fillText(text, textX, textY); // Add text near the line
 
-    return () => {
-      // Cleanup the chart instance if component is unmounted
-      chartInstance.destroy();
-    };
-  }, []);
+  //       },
+  //     }],
+  //   });
 
-  return <canvas id="myExampleScatterPlot" />;
+  //   return () => {
+  //     // Cleanup the chart instance if component is unmounted
+  //     chartInstance.destroy();
+  //   };
+  // }, []);
+
+  // return <canvas id="myExampleScatterPlot" />;
 }
