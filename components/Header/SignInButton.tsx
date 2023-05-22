@@ -5,7 +5,7 @@ import styles from "./header.module.css"
 export default function SignInButton() {
   return <a
     href={`/api/auth/signin`}
-    className={styles.buttonPrimary}
+    className={styles.button}
     onClick={(e) => {
       e.preventDefault()
       signIn()
