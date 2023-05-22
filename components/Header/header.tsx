@@ -1,13 +1,15 @@
 import Link from "next/link"
 import { signIn, signOut, useSession } from "next-auth/react"
 import styles from "./header.module.css"
+import { getServerSession } from "next-auth"
+import SignInButton from "./SignInButton"
+import SignOutButton from "./SignOutButton"
 
 // The approach used in this component shows how to build a sign in and sign out
 // component that works on pages which support both client and server side
 // rendering, and avoids any flash incorrect content on initial page load.
-export default function Header() {
-  const { data: session, status } = useSession()
-  const loading = status === "loading"
+export default async function Header() {
+  const session = await getServerSession()
 
   return (
     <header>
@@ -16,7 +18,7 @@ export default function Header() {
       </noscript>
       <div className={styles.signedInStatus}>
         <p
-          className={`nojs-show ${!session && loading ? styles.loading : styles.loaded
+          className={`nojs-show ${!session ? styles.loading : styles.loaded
             }`}
         >
           {!session && (
@@ -24,16 +26,7 @@ export default function Header() {
               <span className={styles.notSignedInText}>
                 You are not signed in
               </span>
-              <a
-                href={`/api/auth/signin`}
-                className={styles.buttonPrimary}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signIn()
-                }}
-              >
-                Sign in
-              </a>
+              <SignInButton />
             </>
           )}
           {session?.user && (
@@ -49,16 +42,7 @@ export default function Header() {
                 <br />
                 <strong>{session.user.email ?? session.user.name}</strong>
               </span>
-              <a
-                href={`/api/auth/signout`}
-                className={styles.button}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signOut()
-                }}
-              >
-                Sign out
-              </a>
+              <SignOutButton />
             </>
           )}
         </p>
@@ -67,9 +51,6 @@ export default function Header() {
         <ul className={styles.navItems}>
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/test-scatterplot">Test Scatterplot in Pages directory</Link>
           </li>
           {/* <li className={styles.navItem}>
             <Link href="/client">Client</Link>
