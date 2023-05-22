@@ -22,7 +22,6 @@
   ],
   "dependencies": {
     "chart.js": "^4.3.0",
-    "chartjs-plugin-annotation": "^3.0.1",
     "next": "latest",
     "next-auth": "latest",
     "react": "^18.2.0",
