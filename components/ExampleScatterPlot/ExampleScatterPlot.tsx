@@ -41,6 +41,8 @@ export default function ExampleScatterPlot() {
         id: 'customLines',
         afterDraw: (chart) => {
           const ctx = chart.ctx;
+
+          // Add a green line
           ctx.strokeStyle = 'rgba(0, 255, 0, 0.5)'; // Set line color to green
           ctx.lineWidth = 2;
           ctx.beginPath();
@@ -48,6 +50,16 @@ export default function ExampleScatterPlot() {
           ctx.moveTo(chart.chartArea.left, yPosition);
           ctx.lineTo(chart.chartArea.right, yPosition);
           ctx.stroke();
+
+          // Add text just under and to the right of the green line
+          const text = 'Baseline';
+          const textWidth = ctx.measureText(text).width;
+          const textX = chart.chartArea.right - textWidth - 5; // Position the text to the right of the chart
+          const textY = yPosition + 5;
+          ctx.fillStyle = 'black'; // Set text color to black
+          ctx.font = '12px Arial';
+          ctx.fillText(text, textX, textY); // Add text near the line
+
         },
       }],
     });
