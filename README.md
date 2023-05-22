@@ -1,38 +1,15 @@
-> The example repository is maintained from a [monorepo](https://github.com/nextauthjs/next-auth/tree/main/apps/examples/nextjs). Pull Requests should be opened against [`nextauthjs/next-auth`](https://github.com/nextauthjs/next-auth).
+# Overview
 
-<p align="center">
-   <br/>
-   <a href="https://authjs.dev" target="_blank">
-   <img height="64" src="https://authjs.dev/img/logo/logo-sm.png" />
-   </a>
-   <a href="https://nextjs.org" target="_blank">
-   <img height="64" src="https://nextjs.org/static/favicon/android-chrome-192x192.png" />
-   </a>
-   <h3 align="center"><b>NextAuth.js</b> - Example App</h3>
-   <p align="center">
-   Open Source. Full Stack. Own Your Data.
-   </p>
-   <p align="center" style="align: center;">
-      <a href="https://npm.im/next-auth">
-        <img alt="npm" src="https://img.shields.io/npm/v/next-auth?color=green&label=next-auth&style=flat-square">
-      </a>
-      <a href="https://bundlephobia.com/result?p=next-auth-example">
-        <img src="https://img.shields.io/bundlephobia/minzip/next-auth?label=size&style=flat-square" alt="Bundle Size"/>
-      </a>
-      <a href="https://www.npmtrends.com/next-auth">
-        <img src="https://img.shields.io/npm/dm/next-auth?label=downloads&style=flat-square" alt="Downloads" />
-      </a>
-      <a href="https://npm.im/next-auth">
-        <img src="https://img.shields.io/badge/TypeScript-blue?style=flat-square" alt="TypeScript" />
-      </a>
-   </p>
-</p>
-
-## Overview
-
-This project is based off previous work from my [repo](https://github.com/TheRobBrennan/nextjs-with-next-auth) exploring how to incorporate `next-auth` into a simple Next.js app using GitHub for user authentication.
+This project is based off previous work from my [repo](https://github.com/TheRobBrennan/nextjs-with-next-auth) exploring how to incorporate `next-auth` into a simple Next.js app using GitHub for user authentication using the new App router instead of the traditional `pages` directory.
 
 The deployed version of this project can be found at [https://explore-data-visualization-with-nextjs.vercel.app](https://explore-data-visualization-with-nextjs.vercel.app)
+
+![](./screenshots/01.png)
+
+If you click the *Sign In* button, you can log in and see your user profile in the header:
+![](./screenshots/02.png)
+![](./screenshots/03.png)
+![](./screenshots/04.png)
 
 ## Getting Started
 
@@ -66,7 +43,7 @@ For more information about setting up a database, please check out the following
 
 ### 3. Configure Authentication Providers
 
-1. Review and update options in `pages/api/auth/[...nextauth].js` as needed.
+1. Review and update options in `app/api/auth/[...nextauth]/route.ts` as needed.
 
 2. When setting up OAuth, in the developer admin page for each of your OAuth services, you should configure the callback URL to use a callback path of `{server}/api/auth/callback/{provider}`.
 
@@ -90,16 +67,3 @@ To run it in production mode, use:
 npm run build
 npm run start
 ```
-
-### 5. Preparing for Production
-
-Follow the [Deployment documentation](https://authjs.dev/guides/basics/deployment) or deploy the example instantly using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-auth-example)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/TheRobBrennan/explore-data-visualization-with-nextjs&project-name=explore-data-visualization-with-nextjs&repository-name=explore-data-visualization-with-nextjs)
-
-## Acknowledgements
-
-<a href="https://vercel.com?utm_source=nextauthjs&utm_campaign=oss">
-<img width="170px" src="https://raw.githubusercontent.com/nextauthjs/next-auth/main/docs/static/img/powered-by-vercel.svg" alt="Powered By Vercel" />
-</a>
-<p align="left">Thanks to Vercel sponsoring this project by allowing it to be deployed for free for the entire Auth.js Team</p>
