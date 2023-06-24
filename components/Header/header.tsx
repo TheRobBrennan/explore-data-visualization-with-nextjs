@@ -37,6 +37,9 @@ export default async function Header() {
             <Link href="/">Home</Link>
           </li>
           <li className={styles.navItem}>
+            <Link href="/nhl-api-performance">NHL API Performance</Link>
+          </li>
+          <li className={styles.navItem}>
             {!session && (
               <SignInButton />
             )}
