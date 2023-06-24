@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { generateAPIRequests } from "../../lib/nhl/constants";
+import { generateAPIRequests } from "../../lib/nhl";
 
 interface APIRequest {
   endpoint: string,

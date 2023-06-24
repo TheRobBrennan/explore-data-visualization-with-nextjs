@@ -1,7 +1,7 @@
 import Header from '../../components/Header/header'
 import APIComparison from '../components/api-comparison/api-comparison'
 
-const PAGE_TITLE = "Data Visualization with Next.js & Charts.js"
+const PAGE_TITLE = "NHL API Performance"
 
 export default function NHLAPIPerformance() {
   return (
