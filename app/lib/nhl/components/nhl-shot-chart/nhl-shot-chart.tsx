@@ -13,6 +13,11 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
   return (
     <>
       <h1>NHL Data Visualization</h1>
+      {shots.map((shot, index) => (
+        <div key={index}>
+          <p>X:{shot.x}, Y:{shot.y}</p>
+        </div>
+      ))}
       <pre>
         {JSON.stringify(shots)}
       </pre>
