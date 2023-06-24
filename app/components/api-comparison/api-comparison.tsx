@@ -50,7 +50,7 @@ export default function APIComparison() {
       <ul>
         {results.map((result, index) => (
           <li key={index}>
-            Response time is <strong>{result.responseTime.toFixed(2)} ms</strong> for{" "}
+            Response time is <strong>{result.responseTime.toFixed(2)} ms</strong> -{" "}
             <a href={result.endpoint} target="_blank" rel="noopener noreferrer">
               {result.shortName || result.endpoint}
             </a>
