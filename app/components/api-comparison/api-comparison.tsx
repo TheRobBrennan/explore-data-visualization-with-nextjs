@@ -1,25 +1,27 @@
 "use client";
 import { useState, useEffect } from "react";
-import { generateAPIRequests } from "../../lib/nhl";
 
-interface APIRequest {
+export interface APIComparisonProps {
+  apiRequests: APIRequest[];
+}
+
+export interface APIRequest {
   endpoint: string,
   shortName?: string
 }
 
-interface APIResponse extends APIRequest {
+export interface APIResponse extends APIRequest {
   responseTime: number
   httpStatusCode: number
   res: any
 }
 
-export default function APIComparison() {
-  const API_REQUESTS: APIRequest[] = generateAPIRequests()
+export default function APIComparison({ apiRequests }: APIComparisonProps) {
   const [results, setResults] = useState<APIResponse[]>([]);
 
   useEffect(() => {
-    const fetchAPIResponses = async (apiEndpoints: APIRequest[]) => {
-      const promises = apiEndpoints.map(async (url) => {
+    const fetchAPIResponses = async () => {
+      const promises = apiRequests.map(async (url) => {
         const startTime = performance.now();
 
         // Simple example - let's see how long it takes each request to complete
@@ -40,7 +42,7 @@ export default function APIComparison() {
       setResults(apiResponses);
     };
 
-    fetchAPIResponses(API_REQUESTS);
+    fetchAPIResponses();
   }, []);
 
   if (!results || results.length === 0) return null
