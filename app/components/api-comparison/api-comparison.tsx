@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { title } from '../../constants'
-import { generateAPIRequests } from "@/app/lib/nhl/constants";
+import { generateAPIRequests } from "../../lib/nhl/constants";
 
 interface APIRequest {
   endpoint: string,
@@ -48,9 +47,6 @@ export default function APIComparison() {
 
   return (
     <div>
-      <h1>{title}</h1>
-      &nbsp;
-      <p />
       <ul>
         {results.map((result, index) => (
           <li key={index}>
