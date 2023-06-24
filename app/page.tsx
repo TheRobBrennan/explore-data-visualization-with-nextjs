@@ -4,10 +4,12 @@ import ExampleBarChart from './components/ExampleBarChart/ExampleBarChart'
 import ExampleScatterPlot from './components/ExampleScatterPlot/ExampleScatterPlot'
 import ExampleRadarChart from './components/ExampleRadarChart/ExampleRadarChart'
 
-import { generateAPIRequests } from './lib/nhl'
+import NHLShotChart from './lib/nhl/components/nhl-shot-chart/nhl-shot-chart'
+import { generateAPIRequests, generateShots } from './lib/nhl'
 
 export default function DefaultPage() {
   const exampleEndpoints = generateAPIRequests()
+  const exampleShots = generateShots()
 
   return (
     <>
@@ -16,6 +18,7 @@ export default function DefaultPage() {
 
       <h1>NHL API Performance</h1>
       <APIComparison apiRequests={exampleEndpoints} />
+      <NHLShotChart shots={exampleShots} />
 
       <h1>Data Visualization with Next.js & Charts.js</h1>
       <ExampleBarChart />
