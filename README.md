@@ -4,12 +4,10 @@ This project is based off previous work from my [repo](https://github.com/TheRob
 
 The deployed version of this project can be found at [https://explore-data-visualization-with-nextjs.vercel.app](https://explore-data-visualization-with-nextjs.vercel.app)
 
-![](./screenshots/01.png)
-
 If you click the *Sign In* button, you can log in and see your user profile in the header:
+![](./screenshots/01.png)
 ![](./screenshots/02.png)
 ![](./screenshots/03.png)
-![](./screenshots/04.png)
 
 ## Getting Started
 
