@@ -1,8 +1,8 @@
-import Header from '../components/Header/header'
+import Header from './components/Header/header'
 import APIComparison from './components/api-comparison/api-comparison'
-import ExampleBarChart from '../components/ExampleBarChart/ExampleBarChart'
-import ExampleScatterPlot from '../components/ExampleScatterPlot/ExampleScatterPlot'
-import ExampleRadarChart from '../components/ExampleRadarChart/ExampleRadarChart'
+import ExampleBarChart from './components/ExampleBarChart/ExampleBarChart'
+import ExampleScatterPlot from './components/ExampleScatterPlot/ExampleScatterPlot'
+import ExampleRadarChart from './components/ExampleRadarChart/ExampleRadarChart'
 
 
 export default function DefaultPage() {
