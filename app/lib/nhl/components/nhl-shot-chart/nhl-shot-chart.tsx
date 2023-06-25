@@ -76,7 +76,7 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
       .attr('transform', d => `translate(${scaleX(d.x)},${scaleY(d.y)})`);
 
     // Create circles for each shot
-    shotGroups.append('circle').attr('r', 5).attr('fill', 'red');
+    shotGroups.append('circle').attr('r', 5).attr('fill', 'green');
 
     // Add text elements for each shot (initially hidden)
     shotGroups
@@ -105,8 +105,22 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
   }, [shots]);
 
   return (
-    <div>
-      <svg ref={svgRef} width="100%" height="100%" />
+    <div
+      style={{
+        width: '861px',
+        height: '387px',
+        position: 'relative',
+        backgroundImage: 'url(/horizontal-rink-861x387.png)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <svg
+        ref={svgRef}
+        style={{ position: 'absolute', top: 0, left: 0 }}
+        width="861"
+        height="387"
+      ></svg>
       <pre>{JSON.stringify(shots)}</pre>
     </div>
   );
