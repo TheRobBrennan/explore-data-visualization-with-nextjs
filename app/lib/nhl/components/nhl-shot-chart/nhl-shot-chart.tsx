@@ -28,10 +28,11 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
     const padding = 30;
 
     // Calculate scales for x and y values with padding
-    const xMin = d3.min(shots, d => d.x) || 0;
-    const xMax = d3.max(shots, d => d.x) || 0;
-    const yMin = d3.min(shots, d => d.y) || 0;
-    const yMax = d3.max(shots, d => d.y) || 0;
+    // See https://us.v-cdn.net/6030995/uploads/lithium_attachments/2345i9C9ED39EA4669452.jpg for a great visualization overlaid on a hockey rink
+    const xMin = -100
+    const xMax = 100
+    const yMin = -42.5
+    const yMax = 42.5
 
     const scaleX = d3.scaleLinear().domain([xMin, xMax]).range([padding, svgWidth - padding]);
     const scaleY = d3.scaleLinear().domain([yMin, yMax]).range([svgHeight - padding, padding]);
