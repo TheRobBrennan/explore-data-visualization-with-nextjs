@@ -18,6 +18,8 @@ export default function DefaultPage() {
 
       <h1>NHL API Performance</h1>
       <APIComparison apiRequests={exampleEndpoints} />
+
+      <h1>Data Visualization with Next.js & D3</h1>
       <NHLShotChart shots={exampleShots} />
 
       <h1>Data Visualization with Next.js & Charts.js</h1>
