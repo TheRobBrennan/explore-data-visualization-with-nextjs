@@ -7,8 +7,10 @@ export interface NHLShotChartProps {
 }
 
 export interface NHLShot {
-  x: number;
-  y: number;
+  coordinates: {
+    x: number;
+    y: number;
+  }
 }
 
 export default function NHLShotChart({ shots }: NHLShotChartProps) {
@@ -54,7 +56,7 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
       .data(shots)
       .enter()
       .append('g')
-      .attr('transform', d => `translate(${scaleX(d.x)},${scaleY(d.y)})`);
+      .attr('transform', d => `translate(${scaleX(d.coordinates.x)},${scaleY(d.coordinates.y)})`);
 
     // Create circles for each shot
     shotGroups.append('circle').attr('r', 5).attr('fill', 'green');
@@ -62,7 +64,7 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
     // Add text elements for each shot (initially hidden)
     shotGroups
       .append('text')
-      .text((d: NHLShot) => `(${d.x}, ${d.y})`)
+      .text((d: NHLShot) => `(${d.coordinates.x}, ${d.coordinates.y})`)
       .attr('text-anchor', 'middle')
       .attr('dy', -10)
       .attr('font-size', 12)
