@@ -120,8 +120,8 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
         <svg
           ref={svgRef}
           style={{ position: 'absolute', top: 0, left: 0 }}
-          width="861"
-          height="387"
+          width="100%"
+          height="100%"
         />
       </div>
     </>
