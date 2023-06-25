@@ -106,7 +106,7 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
 
   return (
     <div>
-      <svg ref={svgRef} width="100%" height="100%"></svg>
+      <svg ref={svgRef} width="100%" height="100%" />
       <pre>{JSON.stringify(shots)}</pre>
     </div>
   );
