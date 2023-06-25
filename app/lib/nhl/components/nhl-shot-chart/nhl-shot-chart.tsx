@@ -19,12 +19,14 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   const handleResize = () => {
+    // @ts-ignore
     const { clientWidth, clientHeight } = containerRef.current;
     console.log(`Setting container size to ${clientWidth} x ${clientHeight}`)
     setContainerSize({ width: clientWidth, height: clientHeight });
   };
 
   useEffect(() => {
+    // @ts-ignore
     const svg = d3.select<SVGSVGElement, unknown>(svgRef.current);
 
     // Clear any existing elements in the SVG
