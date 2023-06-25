@@ -105,23 +105,25 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
   }, [shots]);
 
   return (
-    <div
-      style={{
-        width: '861px',
-        height: '387px',
-        position: 'relative',
-        backgroundImage: 'url(/horizontal-rink-861x387.png)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <svg
-        ref={svgRef}
-        style={{ position: 'absolute', top: 0, left: 0 }}
-        width="861"
-        height="387"
-      ></svg>
-      <pre>{JSON.stringify(shots)}</pre>
-    </div>
+    <>
+      <h2>Shot chart with mock data</h2>
+      <div
+        style={{
+          width: '861px',
+          height: '387px',
+          position: 'relative',
+          backgroundImage: 'url(/horizontal-rink-861x387.png)',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <svg
+          ref={svgRef}
+          style={{ position: 'absolute', top: 0, left: 0 }}
+          width="861"
+          height="387"
+        />
+      </div>
+    </>
   );
 }
