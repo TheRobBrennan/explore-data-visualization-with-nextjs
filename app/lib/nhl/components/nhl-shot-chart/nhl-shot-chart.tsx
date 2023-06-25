@@ -109,8 +109,9 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
       <h2>Shot chart with mock data</h2>
       <div
         style={{
-          width: '861px',
-          height: '387px',
+          width: '100%',
+          height: '0',
+          paddingBottom: '44.98%', // Maintain the aspect ratio (387 / 861 * 100) to avoid distortion
           position: 'relative',
           backgroundImage: 'url(/horizontal-rink-861x387.png)',
           backgroundSize: 'cover',
@@ -119,9 +120,7 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
       >
         <svg
           ref={svgRef}
-          style={{ position: 'absolute', top: 0, left: 0 }}
-          width="100%"
-          height="100%"
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
         />
       </div>
     </>
