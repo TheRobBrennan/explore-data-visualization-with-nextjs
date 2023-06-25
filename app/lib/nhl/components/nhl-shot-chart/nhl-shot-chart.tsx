@@ -12,9 +12,37 @@ export interface NHLShot {
 }
 
 export default function NHLShotChart({ shots }: NHLShotChartProps) {
+  if (!shots || shots.length === 0) return null;
+
   const svgRef = useRef<SVGSVGElement>(null);
 
-  if (!shots || shots.length === 0) return null;
+  // All distances are in FT from https://github.com/war-on-ice/icerink/blob/master/assets/js/rinkPlot.js
+  const RINK_CONFIG =
+  {
+    RINK_LENGTH: 200,
+    RINK_WIDTH: 85,
+    BLUE_LINE_WIDTH: 1,
+    BOARDS_RADIUS: 28,
+    RED_TO_BOARDS: 11,
+    RED_TO_FACEOFF: 20,
+    FACEOFF_RADIUS: 15,
+    FACEOFF_DOT_RADIUS: 1,
+    ZONE_LINE_WIDTH: (2 / 12),
+    CREASE_RADIUS: 6,
+    ZONE_LENGTH: 75,
+    ZONE_TO_NEUTRAL_DOT: 5,
+    CENTER_TO_NEUTRAL_DOT: 22,
+    REF_CREASE_RADIUS: 10,
+    CREASE_HEIGHT: 4,
+    FACEOFF_HOR_LENGTH: 3,
+    FACEOFF_VER_LENGTH: 4,
+    FACEOFF_HOR_DIST_CEN: 2,
+    FACEOFF_VER_DIST_CEN: (9 / 12),
+    FACEOFF_OUT_MARK_LENGTH: 2,
+    FACEOFF_OUT_MARK_DIST_BW: 5 + (7 / 12),
+    TRAPEZOID_TOP: 22,
+    TRAPEZOID_BOTTOM: 28
+  };
 
   useEffect(() => {
     const svg = d3.select<SVGSVGElement, unknown>(svgRef.current);
@@ -36,6 +64,8 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
 
     const scaleX = d3.scaleLinear().domain([xMin, xMax]).range([padding, svgWidth - padding]);
     const scaleY = d3.scaleLinear().domain([yMin, yMax]).range([svgHeight - padding, padding]);
+
+    // Create markings on the ice - See https://github.com/war-on-ice/icerink/blob/master/assets/js/rinkPlot.js for a D3 example from 8 years ago
 
     // Create groups for each shot
     const shotGroups = svg
@@ -75,7 +105,7 @@ export default function NHLShotChart({ shots }: NHLShotChartProps) {
   }, [shots]);
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div>
       <svg ref={svgRef} width="100%" height="100%"></svg>
       <pre>{JSON.stringify(shots)}</pre>
     </div>
