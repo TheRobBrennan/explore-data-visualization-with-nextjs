@@ -23,6 +23,7 @@
   "dependencies": {
     "chart.js": "^4.3.0",
     "chartjs-plugin-annotation": "^3.0.1",
+    "d3": "^7.8.5",
     "next": "latest",
     "next-auth": "latest",
     "react": "^18.2.0",
@@ -30,6 +31,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.0",
     "@types/node": "^18.16.2",
     "@types/react": "^18.2.0",
     "typescript": "^5.0.4"
