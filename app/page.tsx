@@ -14,7 +14,7 @@ export default function DefaultPage() {
   return (
     <>
       {/* @ts-expect-error Async Server Component - https://nextjs.org/docs/app/building-your-application/configuring/typescript#async-server-component-typescript-error */}
-      <Header />
+      {/* <Header /> */}
 
       <h1>NHL API Performance</h1>
       <APIComparison apiRequests={exampleEndpoints} />
